@@ -1,10 +1,14 @@
 package gym;
 import java.util.*;
 public class Gym {
-	private ArrayList<Training_Device> Machines = new ArrayList<Training_Device>();
-	private ArrayList<Trainee> costumers= new ArrayList<Trainee>();
+	private ArrayList<Training_Device> Machines;
+	private ArrayList<Trainee> costumers;
 	public ArrayList<Training_Device> getMachines() {
 		return Machines;
+	}
+	public Gym(ArrayList<Training_Device> machines, ArrayList<Trainee> costumers) {
+		Machines = machines;
+		this.costumers = costumers;
 	}
 	public ArrayList<Trainee> getCostumers() {
 		return costumers;
