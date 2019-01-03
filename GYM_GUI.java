@@ -23,14 +23,17 @@ public class GYM_GUI extends JFrame implements ActionListener{
 	   private JLabel lblInput2;     // Declare input Label
 	   private JLabel lblOutput2;    // Declare output Label
 	   private JLabel lblInput3;     // Declare input Label
-	   private JLabel lblOutput3;    // Declare output Label
+	   private JLabel lblOutput3;     // Declare input Label
+	   private JLabel lblInput4;
+	   private JLabel lblOutput4;    // Declare output Label
 	   private JTextField tfInput;  // Declare input TextField
 	   private JTextField tfOutput; // Declare output display TextField
 	   private JTextField tfInput2;  // Declare input TextField
 	   private JTextField tfOutput2; // Declare output display TextField
 	   private JTextField tfInput3;  // Declare input TextField
 	   private JTextField tfOutput3; // Declare output display TextField 
-	
+	   private JTextField tfOutput4;
+	   private JTextField tfInput4;
 	   private Trainee Trainee ;        
 	   private Machine Machine;
 	   private Program Program;
@@ -99,6 +102,26 @@ public class GYM_GUI extends JFrame implements ActionListener{
 	      tfOutput3.setEditable(false);  // read-only
 	      add(tfOutput3);
 	      
+	      
+	      lblInput4 = new JLabel("Enter level"); // Construct component Label
+	      add(lblInput4);  // "super" Frame adds the Label
+	 
+	      tfInput3 = new JTextField(10);  // Construct component TextField
+	      add(tfInput4);   // "super" Frame adds the TextField
+	 
+	      tfInput4.addActionListener(this);
+	         // tfInput is a source that fires ActionEvent when entered.
+	         // The source add "this" instance as a ActionEvent listener, which provides
+	         //  an ActionEvent handler called actionPerformed().
+	         // Hitting enter on tfInput invokes actionPerformed().
+	 
+	      lblOutput4 = new JLabel("level");  // Construct component Label
+	      add(lblOutput4);  // "super" Frame adds Label
+	 
+	      tfOutput4 = new JTextField(10); // Construct component TextField
+	      tfOutput4.setEditable(false);  // read-only
+	      add(tfOutput4);
+	      
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	      setTitle("GYM"); // "super" Frame sets title
 	      setSize(350, 120);    // "super" Frame sets initial size
@@ -123,5 +146,6 @@ public class GYM_GUI extends JFrame implements ActionListener{
 	      tfOutput.setText("" + Trainee.name); // Display sum on the output TextField, convert int to String
 	      tfOutput2.setText("" + Trainee.id); // Display sum on the output TextField, convert int to String
 	      tfOutput3.setText("" + Trainee.address); // Display sum on the output TextField, convert int to String
+	      tfOutput4.setText("" + Trainee.level);
 	   }
 	}
