@@ -27,6 +27,7 @@ public class Exercise {
 		this.id = id;
 		this.sets = sets;
 		this.reps = reps;
+		this.type = "Power";
 	}
 	public String getType() {
 		return type;
