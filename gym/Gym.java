@@ -22,4 +22,10 @@ public class Gym {
 	{
 		this.costumers.remove(index);
 	}
+	public void addMachine(Training_Device e)
+	{
+		this.Machines.add(e);
+		
+	}
+	
 }

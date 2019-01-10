@@ -37,7 +37,26 @@
                   </AnchorPane>
                </content>
           </Tab>
-          <Tab text="Untitled Tab 1" />
+          <Tab text="Add Machines">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="MName1" layoutX="26.0" layoutY="72.0" text="Name" />
+                        <TextField fx:id="MMuscle" layoutX="26.0" layoutY="109.0" text="Muscle" />
+                        <TextField fx:id="MName2" layoutX="310.0" layoutY="72.0" text="Name" />
+                        <TextField fx:id="MTime" layoutX="310.0" layoutY="109.0" text="Time To Work" />
+                        <TextField fx:id="MPulse" layoutX="310.0" layoutY="141.0" text="Pulse" />
+                        <Button layoutX="189.0" layoutY="72.0" mnemonicParsing="false" text="Add power" />
+                        <Button layoutX="491.0" layoutY="72.0" mnemonicParsing="false" text="Add Airobic" />
+                        <TextArea layoutX="61.0" layoutY="213.0" prefHeight="102.0" prefWidth="460.0" />
+                        <Label layoutX="228.0" layoutY="165.0" text="Machines">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
         </tabs>
       </TabPane>
   </children>
