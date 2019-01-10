@@ -48,7 +48,7 @@
                         <TextField fx:id="MPulse" layoutX="310.0" layoutY="141.0" text="Pulse" />
                         <Button layoutX="189.0" layoutY="72.0" mnemonicParsing="false" text="Add power" />
                         <Button layoutX="491.0" layoutY="72.0" mnemonicParsing="false" text="Add Airobic" />
-                        <TextArea layoutX="61.0" layoutY="213.0" prefHeight="102.0" prefWidth="460.0" />
+                        <TextArea fx:id="MList" layoutX="61.0" layoutY="213.0" prefHeight="102.0" prefWidth="460.0" />
                         <Label layoutX="228.0" layoutY="165.0" text="Machines">
                            <font>
                               <Font size="30.0" />
