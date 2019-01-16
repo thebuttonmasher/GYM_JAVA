@@ -5,6 +5,20 @@ public class Training_Device {
 	private String type;
 	private String muscle;
 	private float timeToWork;
+	public float getTimeToWork() {
+		return timeToWork;
+	}
+	public void setTimeToWork(float timeToWork) {
+		this.timeToWork = timeToWork;
+	}
+	public float getPulse() {
+		return pulse;
+	}
+	public void setPulse(float pulse) {
+		this.pulse = pulse;
+	}
+
+
 	private float pulse;
 	public String getName() {
 		return name;
@@ -28,7 +42,7 @@ public class Training_Device {
 		
 		this.name = name;
 		this.type = type;
-		this.muscle = null;
+		this.muscle = "";
 		this.timeToWork = timetowork;
 		this.pulse = pulse;
 		
@@ -41,8 +55,8 @@ public class Training_Device {
 		this.name = name;
 		this.type = type;
 		this.muscle = muscle;
-		this.timeToWork = (Float) null;
-		this.pulse = (Float) null;
+		this.timeToWork = 0;
+		this.pulse = 0;
 	}
 	
 	

@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="403.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.fxmlController">
+<VBox prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.fxmlController">
   <children>
-      <TabPane prefHeight="424.0" prefWidth="607.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Add Trainees">
                <content>
@@ -39,21 +39,22 @@
           </Tab>
           <Tab text="Add Machines">
                <content>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane prefHeight="500.0" prefWidth="800.0">
                      <children>
                         <TextField fx:id="MName1" layoutX="26.0" layoutY="72.0" text="Name" />
                         <TextField fx:id="MMuscle" layoutX="26.0" layoutY="109.0" text="Muscle" />
-                        <TextField fx:id="MName2" layoutX="310.0" layoutY="72.0" text="Name" />
-                        <TextField fx:id="MTime" layoutX="310.0" layoutY="109.0" text="Time To Work" />
-                        <TextField fx:id="MPulse" layoutX="310.0" layoutY="141.0" text="Pulse" />
-                        <Button layoutX="189.0" layoutY="72.0" mnemonicParsing="false" text="Add power" />
-                        <Button layoutX="491.0" layoutY="72.0" mnemonicParsing="false" text="Add Airobic" />
-                        <TextArea fx:id="MList" layoutX="61.0" layoutY="213.0" prefHeight="102.0" prefWidth="460.0" />
-                        <Label layoutX="228.0" layoutY="165.0" text="Machines">
+                        <TextField fx:id="MName2" layoutX="362.0" layoutY="72.0" text="Name" />
+                        <TextField fx:id="MTime" layoutX="362.0" layoutY="109.0" text="Time To Work" />
+                        <TextField fx:id="MPulse" layoutX="362.0" layoutY="152.0" text="Pulse" />
+                        <Button layoutX="189.0" layoutY="72.0" mnemonicParsing="false" onAction="#addPwr" text="Add power" />
+                        <Button layoutX="533.0" layoutY="72.0" mnemonicParsing="false" onAction="#addAir" text="Add Airobic" />
+                        <TextArea fx:id="MList" layoutX="113.0" layoutY="280.0" prefHeight="102.0" prefWidth="460.0" />
+                        <Label layoutX="290.0" layoutY="216.0" text="Machines">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
+                        <Button layoutX="495.0" layoutY="248.0" mnemonicParsing="false" onAction="#updMch" text="Update List" />
                      </children>
                   </AnchorPane>
                </content></Tab>

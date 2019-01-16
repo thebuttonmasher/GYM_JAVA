@@ -40,7 +40,24 @@ public class fxmlController {
 	}
 	public void addAir(ActionEvent event)
 	{
-		
+		gymi.addMachine(new Training_Device(MName2.getText(), "Aerobic", 30, 160));
+	}
+	public void updMch(ActionEvent event)
+	{
+		//updates the text area
+		String s =  "";
+		for(int i = 0; i < gymi.getMachines().size(); i++)
+		{
+			if(gymi.getMachines().get(i).getType() == "Aerobic") {
+			s = s + gymi.getMachines().get(i).getName() + "  " + gymi.getMachines().get(i).getType() + " Time to work: " + gymi.getMachines().get(i).getTimeToWork() + " Pulse :" + gymi.getMachines().get(i).getPulse();
+			s = s + "\n";}
+			else
+			{
+				s = s + gymi.getMachines().get(i).getName() + "  " + gymi.getMachines().get(i).getType() + " Muscle :" + gymi.getMachines().get(i).getMuscle();
+				s = s + "\n";
+			}
+		}
+		MList.setText(s);
 	}
 	public void updtTr(ActionEvent event)
 	{
