@@ -56,6 +56,10 @@ public class Exercise {
 		this.pulse = pulse;
 		this.id = id;
 	}
+	@Override
+	public String toString() {
+		return "Exercise [name=" + name + ", type=" + type + "]";
+	}
 	public int getSets() {
 		return sets;
 	}

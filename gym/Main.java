@@ -22,8 +22,6 @@ public class Main extends Application{
 	@Override
 	public void start(Stage stage) throws IOException
 	{
-		// Create the FXMLLoader 
-		
 
 		// Create the Pane and all Details
 		VBox root = (VBox) FXMLLoader.load(getClass().getResource("/gym/fxml.fxml"));

@@ -1,10 +1,13 @@
 package gym;
 
+import java.util.ArrayList;
+
 public class Training_Device {
 	private String name;
 	private String type;
 	private String muscle;
 	private float timeToWork;
+	private ArrayList<Exercise> exList;
 	public float getTimeToWork() {
 		return timeToWork;
 	}
@@ -45,6 +48,7 @@ public class Training_Device {
 		this.muscle = "";
 		this.timeToWork = timetowork;
 		this.pulse = pulse;
+		this.exList = new ArrayList<Exercise>();
 		
 
 	}
@@ -57,6 +61,17 @@ public class Training_Device {
 		this.muscle = muscle;
 		this.timeToWork = 0;
 		this.pulse = 0;
+		this.exList = new ArrayList<Exercise>();
+	}
+	@Override
+	public String toString() {
+		return name;
+	}
+	public ArrayList<Exercise> getExList() {
+		return exList;
+	}
+	public void setExList(ArrayList<Exercise> exList) {
+		this.exList = exList;
 	}
 	
 	

@@ -7,6 +7,8 @@ import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 //controller class, handles the elements from the fxml file. has to implement each element with an fx:id !!!!!
 public class fxmlController {
@@ -14,6 +16,7 @@ public class fxmlController {
 	public Gym gymi = new Gym(new ArrayList<Training_Device>() , new ArrayList<Trainee>());
 	public ComboBox<Exercise> tempEx = new ComboBox<Exercise>();
 	public ArrayList<Exercise> logTmpEx = new ArrayList<Exercise>();
+	public ArrayList<Exercise> tmpReg = new ArrayList<Exercise>();
 	public Trainee tempTr = new Trainee(null, 0, null, 0, null);
 	public TextField TrName = new TextField();
 	public TextField TrID = new TextField();
@@ -26,17 +29,34 @@ public class fxmlController {
 	public TextField MPulse = new TextField();
 	public TextField MTime = new TextField();
 	public TextArea MList= new TextArea();
+	public TextField EName = new TextField();
+	public TextField EId = new TextField();
+	public TextField Ettw = new TextField();
+	public TextField EPulse = new TextField();
+	public TextField EReps = new TextField();
+	public TextField ESets = new TextField();
+	public TextArea exTst = new TextArea();
+	
+
+
+
+	public ComboBox<Training_Device> MachChoice = new ComboBox<Training_Device>();
 	// Event Listener on Button.onAction
 	@FXML
 	public void func(ActionEvent event) {
 		//bound to the Add button, adds trainees to the list
 
-		Trainee nTr = new Trainee(TrName.getText(),Integer.parseInt(TrID.getText()),TrAddr.getText(),Integer.parseInt(TrLevel.getText()),new Training_Regiment("today",logTmpEx));
+		Trainee nTr = new Trainee(TrName.getText(),Integer.parseInt(TrID.getText()),TrAddr.getText(),Integer.parseInt(TrLevel.getText()),new Training_Regiment("today",tmpReg));
 		gymi.addTrainee(nTr);
+	}
+	public void trReg(ActionEvent event)
+	{
+		tmpReg.add(tempEx.getValue());
 	}
 	public void addPwr(ActionEvent event)
 	{
 		gymi.addMachine(new Training_Device(MName1.getText(),"Power",MMuscle.getText()));
+		
 	}
 	public void addAir(ActionEvent event)
 	{
@@ -56,7 +76,9 @@ public class fxmlController {
 				s = s + gymi.getMachines().get(i).getName() + "  " + gymi.getMachines().get(i).getType() + " Muscle :" + gymi.getMachines().get(i).getMuscle();
 				s = s + "\n";
 			}
+			
 		}
+		MachChoice.setItems(FXCollections.observableArrayList(gymi.getMachines()));
 		MList.setText(s);
 	}
 	public void updtTr(ActionEvent event)
@@ -69,5 +91,29 @@ public class fxmlController {
 			s = s + "\n";
 		}
 		TrLst.setText(s);
+	}
+	public void addEx(ActionEvent event)
+	{
+		if(MachChoice.getValue().getType() == "Power")
+		{
+		logTmpEx.add(new Exercise(EName.getText(), Integer.parseInt(EId.getText()), Integer.parseInt(ESets.getText()), Integer.parseInt(EReps.getText())));
+		MachChoice.getValue().getExList().add(new Exercise(EName.getText(), Integer.parseInt(EId.getText()), Integer.parseInt(ESets.getText()), Integer.parseInt(EReps.getText())));
+		}
+		else
+		{
+		logTmpEx.add(new Exercise(EName.getText(),"Aerobic",Integer.parseInt(Ettw.getText()),Integer.parseInt(EPulse.getText()),Integer.parseInt(EId.getText())));
+		MachChoice.getValue().getExList().add(new Exercise(EName.getText(),"Aerobic",Integer.parseInt(Ettw.getText()),Integer.parseInt(EPulse.getText()),Integer.parseInt(EId.getText())));
+		}
+	}
+	public void updtEx(ActionEvent event)
+	{
+		String s = " ";
+		for(int i = 0; i < logTmpEx.size(); i++){
+		s = s + logTmpEx.get(i).toString() + "\n";
+		}
+		tempEx.setItems(FXCollections.observableArrayList(logTmpEx));
+		exTst.setText(s);
+		
+		
 	}
 }

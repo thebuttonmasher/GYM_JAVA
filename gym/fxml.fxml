@@ -25,7 +25,7 @@
                         <TextField fx:id="TrLevel" layoutX="44.0" layoutY="161.0" text="Level:" />
                         <TextField fx:id="TrAddr" layoutX="44.0" layoutY="199.0" text="Address:" />
                         <ComboBox fx:id="tempEx" layoutX="44.0" layoutY="262.0" prefWidth="150.0" promptText="Training Regiment" />
-                        <Button layoutX="225.0" layoutY="262.0" mnemonicParsing="false" onAction="#func" text="Add" />
+                        <Button layoutX="225.0" layoutY="262.0" mnemonicParsing="false" text="Add" />
                         <TextArea fx:id="TrLst" layoutX="341.0" layoutY="78.0" prefHeight="216.0" prefWidth="200.0" />
                         <Button layoutX="486.0" layoutY="304.0" mnemonicParsing="false" onAction="#updtTr" text="Update" />
                         <Label layoutX="341.0" layoutY="47.0" prefHeight="17.0" prefWidth="112.0" text="Trainees">
@@ -47,7 +47,7 @@
                         <TextField fx:id="MTime" layoutX="362.0" layoutY="109.0" text="Time To Work" />
                         <TextField fx:id="MPulse" layoutX="362.0" layoutY="152.0" text="Pulse" />
                         <Button layoutX="189.0" layoutY="72.0" mnemonicParsing="false" onAction="#addPwr" text="Add power" />
-                        <Button layoutX="533.0" layoutY="72.0" mnemonicParsing="false" onAction="#addAir" text="Add Airobic" />
+                        <Button layoutX="533.0" layoutY="72.0" mnemonicParsing="false" onAction="#addAir" text="Add Aerobic" />
                         <TextArea fx:id="MList" layoutX="113.0" layoutY="280.0" prefHeight="102.0" prefWidth="460.0" />
                         <Label layoutX="290.0" layoutY="216.0" text="Machines">
                            <font>
@@ -58,6 +58,29 @@
                      </children>
                   </AnchorPane>
                </content></Tab>
+            <Tab text="Add exercises">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="EName" layoutX="117.0" layoutY="66.0" text="Name" />
+                        <TextField fx:id="EId" layoutX="117.0" layoutY="107.0" text="Id" />
+                        <TextField fx:id="Ettw" layoutX="23.0" layoutY="247.0" text="Time to Work" />
+                        <TextField fx:id="EPulse" layoutX="23.0" layoutY="212.0" text="Pulse" />
+                        <Button layoutX="172.0" layoutY="275.0" mnemonicParsing="false" onAction="#addEx" text="Add" />
+                        <ComboBox fx:id="MachChoice" layoutX="116.0" layoutY="162.0" prefWidth="150.0" promptText="Training_Devices" />
+                        <TextArea fx:id="exTst" layoutX="476.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Button layoutX="550.0" layoutY="309.0" mnemonicParsing="false" onAction="#updtEx" text="update" />
+                        <Label layoutX="513.0" layoutY="31.0" text="Exercises">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ESets" layoutX="200.0" layoutY="212.0" text="Sets" />
+                        <TextField fx:id="EReps" layoutX="200.0" layoutY="247.0" text="Reps" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
   </children>
